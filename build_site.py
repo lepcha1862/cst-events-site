@@ -1,15 +1,18 @@
-import json
-from datetime import date
-from pathlib import Path
-
-def load_events(path):
-    data = json.loads(Path(path).read_text())
-    return data["events"]
-
-def upcoming(events,today):
-    future = [e for e in events if e["date"] >= today]
-    return sorted(future, key=lambda e: e["date"])
-
+import json 
+from datetime import date 
+from pathlib import Path 
+ 
+ 
+def load_events(path): 
+    data = json.loads(Path(path).read_text()) 
+    return data["events"] 
+ 
+ 
+def upcoming(events, today): 
+    future = [e for e in events if e["date"] >= today] 
+    return sorted(future, key=lambda e: e["date"]) 
+ 
+ 
 def render(events): 
     items = "\n".join( 
         f'      <li><strong>{e["date"]}</strong> - {e["title"]}' 
@@ -31,13 +34,14 @@ def render(events):
         '</body>\n' 
         '</html>\n' 
     ) 
-    
-def main():
-    events = upcoming(load_events("events.json"), date.today().isoformat())
-    Path("dist").mkdir(exist_ok=True)
-    Path("dist/index.html").write_text(render(events))
-    print(f"wrote dist/index.html with {len(events)} events")
-    
-if __name__ == "__main__":
-    main()
-    
+ 
+ 
+def main(): 
+    events = upcoming(load_events("events.json"), date.today().isoformat()) 
+    Path("dist").mkdir(exist_ok=True) 
+    Path("dist/index.html").write_text(render(events)) 
+    print(f"wrote dist/index.html with {len(events)} events") 
+ 
+ 
+if __name__ == "__main__": 
+    main() 
