@@ -1,1 +1,1 @@
-# -cst-events-site
+# cst-events-site
