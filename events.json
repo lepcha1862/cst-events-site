@@ -5,6 +5,7 @@
         { "title": "Orientation",       "date": "2027-02-14", "venue": "Auditorium" }, 
         { "title": "Annual Meeting",    "date": "2025-11-02", "venue": "Room 12" }, 
         { "title": "Coding Contest",    "date": "2027-05-20", "venue": "Lab 2" }, 
-        { "title": "Ted Talk",    "date": "2026-10-20", "venue": "Convention Hall" } 
+        { "title": "Ted Talk",    "date": "2026-10-20", "venue": "Convention Hall" }, 
+        { "title": "AI and Machine Learning",    "date": "2026-6-20", "venue": "Convention Hall" } 
     ] 
 }
